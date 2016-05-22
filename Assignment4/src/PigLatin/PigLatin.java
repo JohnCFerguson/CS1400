@@ -10,7 +10,7 @@ public class PigLatin {
 		
 		System.out.println("Please enter a word (or press Q to quit): ");
 		
-		ArrayList<String> newSentence;
+		ArrayList<String> newSentence = new ArrayList<String>(0);
 		
 		String completeNewSentence = "";
 		
@@ -18,9 +18,7 @@ public class PigLatin {
 			
 			String translate = stringToTranslate.next();
 		
-				while (translate.toLowerCase().charAt(0) != 'q' || translate.length() != 1) {
-					
-					newSentence = new ArrayList<String>(0);
+				while (translate.toLowerCase().charAt(0) != 'q' || translate.length() != 1) { 
 					
 					if (translate.toLowerCase().charAt(0) != 'a' && translate.toLowerCase().charAt(0) != 'e' && translate.toLowerCase().charAt(0) != 'i' 
 								&& translate.toLowerCase().charAt(0) != 'o' && translate.toLowerCase().charAt(0) != 'u' )
@@ -58,19 +56,20 @@ public class PigLatin {
 							completeNewSentence += (newSentence.get(i) + " ");
 							newSentence.remove(i);
 						}
-						/*else{
-							completeNewSentence += (newSentence.get(i) + ".");
-						}*/
-						System.out.println(completeNewSentence);
+
+						//System.out.println(completeNewSentence);
 					}
 						
 						
-
+					System.out.println(completeNewSentence);
+					
 					System.out.println("Please enter a word (or press Q to quit): ");		
 							
 					translate = stringToTranslate.next();
 					
-					newSentence = new ArrayList<String>(0);
+					newSentence.clear();
+					
+					//completeNewSentence = "";
 				}
 				
 		
